@@ -1,0 +1,13 @@
+name: Platform of Payments and Sales Simple
+type: module
+core_version_requirement: ^9
+description: Allows users pay services purchases with payment gateways in a simple and affordable manner.
+package: Custom
+
+dependencies:
+  - drupal:block
+  
+version: '0.10.2'
+project: ppss
+'interface translation project': ppss
+'interface translation server pattern': 'modules/custom/ppss/translations/ppss.es.po'
