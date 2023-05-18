@@ -1,10 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
+	"time"
 
 	"github.com/agomezguru/cti-b2b/auth-service/db"
+	"github.com/agomezguru/cti-b2b/auth-service/handlers"
 
 	yaml "gopkg.in/yaml.v3"
 )
@@ -40,9 +43,23 @@ func main()  {
 	log.Println("Initializing. Try to connet with DB, please wait...")
 
 	if db.DBConnectionAlive() == false {
-		log.Fatal("DB connection failed")
+		log.Fatal("DB connection failed.")
 		return 
 	}
+
+	log.Println("Web Server startup on. Started listening connections.")
+
+	handlers.Drivers()
+
+
+	fmt.Println(time.Now())
+	/*_, finded, userId := db.UserExist("alagunas", "agomez@noticiasnet.mx")
+
+	if finded {
+		fmt.Println("Usuario ya existe: " + fmt.Sprint(userId))
+	} else {
+		fmt.Println("Usuario no regsitrado: " + fmt.Sprint(userId))
+	} */
 	// All opened conections to database be closed before finish ejecution.
 	defer db.DatabaseCN.Close()
 }
