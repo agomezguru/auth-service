@@ -9,7 +9,7 @@ import (
 
 // ToDo: Read configuration file, write logs
 // https://dev.to/ilyakaznacheev/a-clean-way-to-pass-configs-in-a-go-application-1g64
-/* MongoCN is the DB object connection */
+/* DatabaseCN is the DB object connection */
 var DatabaseCN = dbConnect("mysql", "root", "741", "default")
 
 /* DBConnect make a remote DB connection, returns a valid connection object */
