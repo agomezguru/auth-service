@@ -1,0 +1,10 @@
+# Codealike, user productivity app. Now is in test mode, please don't includes yet.
+codealike.json
+
+# Docker container image, needs to split in other folder, this is for testing purpouse only.
+Dockerfile
+.dockerignore
+
+# Distribution package for developers
+auth-service
+auth-service.tar.gz
